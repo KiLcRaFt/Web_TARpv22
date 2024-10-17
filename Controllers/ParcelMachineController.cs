@@ -21,5 +21,15 @@ namespace Web_TARpv22.Controllers
             var responseBody = await response.Content.ReadAsStringAsync();
             return Content(responseBody, "application/json");
         }
+
+        //Iseseisev töö ---------------------------------------------------
+
+        [HttpGet("smartpost") ]
+        public async Task<IActionResult> GetParcelMachines2()
+        {
+            var response = await _httpClient.GetAsync("https://itella.ee/places/fi_apt.json");
+            var responseBody = await response.Content.ReadAsStringAsync();
+            return Content(responseBody, "application/json");
+        }
     }
 }
